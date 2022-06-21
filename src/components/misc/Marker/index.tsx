@@ -10,12 +10,11 @@ const Marker = ({
 		if (onClick) onClick(isBasic);
 	};
 
-	console.log(isBasic, 'isBasic');
 	return (
 		<div
 			onClick={handleClickMarker}
-			className={`dot ${isBasic ? 'dot_basic' : 'dot_root_note'} ${
-				isActive ? 'dot_color_active' : ''
+			className={`marker ${isBasic ? 'marker_basic' : 'marker_root_note'} ${
+				isActive ? 'marker_color_active' : ''
 			}`}
 		></div>
 	);

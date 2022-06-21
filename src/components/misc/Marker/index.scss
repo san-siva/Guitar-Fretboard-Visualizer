@@ -1,4 +1,4 @@
-.dot {
+.marker {
 	margin-right: 10px;
 	cursor: pointer;
 	border: 2px solid #fff;
@@ -10,16 +10,16 @@
 	background-color: rgba(0, 0, 0, 0.6);
 }
 
-.dot:hover,
-.dot_color_active {
+.marker:hover,
+.marker_color_active {
 	border: 2px solid #0c0f14;
 }
 
-.dot_basic {
+.marker_basic {
 	background-color: #0c0f14;
 }
 
-.dot_root_note {
+.marker_root_note {
 	background-color: #febb31;
 }
 

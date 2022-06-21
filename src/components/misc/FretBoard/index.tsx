@@ -145,6 +145,8 @@ const FretBoard = () => {
 		'd-61': 0
 	});
 	const [selectedMarker, updateSelectedMarker] = useState(2);
+	const [isFretNotesEnabled, toggleFretNotes] = useState(true);
+	const [isFretNumbersEnabled, toggleFretNumbers] = useState(true);
 
 	const handleClickNote = (e: any) => {
 		const id = e.currentTarget.getAttribute('data-id') as string;
@@ -304,7 +306,11 @@ const FretBoard = () => {
 	return (
 		<div className="fret-board-container">
 			<div className="fret-board">
-				<div className="fret-numbers">
+				<div
+					className={`${
+						isFretNumbersEnabled ? '' : 'fret-numbers-hidden'
+					} fret-numbers`}
+				>
 					<div className="fret-number">1</div>
 					<div className="fret-number">2</div>
 					<div className="fret-number">3</div>
@@ -328,7 +334,11 @@ const FretBoard = () => {
 					<div className="fret-number">21</div>
 					<div className="fret-number">22</div>
 				</div>
-				<div className="fret_board_container">
+				<div
+					className={`${
+						isFretNumbersEnabled ? '' : 'fret_board_container_notes_hidden'
+					} fret_board_container`}
+				>
 					<div className="fret_board_open">
 						{openNotes.map(el => (
 							<div

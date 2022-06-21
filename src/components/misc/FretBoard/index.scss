@@ -147,7 +147,7 @@
 
 .dots {
 	height: 100%;
-	width: 106px;
+	width: 100px;
 	background-color: transparent;
 
 	position: absolute;
@@ -163,57 +163,61 @@
 
 .dots-2 {
 	left: calc(112px + 106px + 100px + 94px);
-	width: 94px;
+	width: 89px;
 }
 
 .dots-3 {
 	left: calc(112px + 106px + 100px + 94px + 89px + 84px);
-	width: 84px;
+	width: 79px;
 }
+
 .dots-4 {
 	left: calc(112px + 106px + 100px + 94px + 89px + 84px + 79px + 75px);
-	width: 75px;
+	width: 71px;
 }
+
 .dots-5 {
 	left: calc(
 		112px + 106px + 100px + 94px + 89px + 84px + 79px + 75px + 71px + 67px +
 			63px
 	);
-	width: 63px;
+	width: 59px;
 }
+
 .dots-6 {
+
 	left: calc(
 		112px + 106px + 100px + 94px + 89px + 84px + 79px + 75px + 71px + 67px +
 			63px + 59px + 56px + 53px
 	);
-	width: 53px;
+	width: 50px;
 }
+
 
 .dots-7 {
 	left: calc(
 		112px + 106px + 100px + 94px + 89px + 84px + 79px + 75px + 71px + 67px +
 			63px + 59px + 56px + 53px + 50px + 47px
 	);
-	width: 47px;
+	width: 45px;
 }
+
 .dots-8 {
 	left: calc(
 		112px + 106px + 100px + 94px + 89px + 84px + 79px + 75px + 71px + 67px +
 			63px + 59px + 56px + 53px + 50px + 47px + 45px + 42px
 	);
-	width: 42px;
+	width: 40px;
 }
+
 .dots-9 {
 	left: calc(
 		112px + 106px + 100px + 94px + 89px + 84px + 79px + 75px + 71px + 67px +
 			63px + 59px + 56px + 53px + 50px + 47px + 45px + 42px + 40px + 37px
 	);
-	width: 37px;
+	width: 35px;
 }
 
-.dots > .dot {
-	border: 0px;
-}
 
 .fret_board_open {
 	position: relative;
@@ -270,4 +274,11 @@ body > h3 {
 	font-weight: 400;
 	font-size: 12px;
 	color: #0c0f14;
+}
+
+.dot {
+	height: 20px;
+	width: 20px;
+	border-radius: 100%;
+	background-color: rgba(0, 0, 0, 0.6);
 }

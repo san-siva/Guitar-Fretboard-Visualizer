@@ -6,6 +6,13 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+
+	background-image: radial-gradient(#444cf7 0.5px, #fff 0.5px);
+	background-size: 10px 10px;
+}
+
+.fret-board-inner-wrapper {
+	margin-top: auto;
 }
 
 .fret-board-inner-wrapper {
@@ -36,6 +43,7 @@
 		rgba(237, 208, 150, 0.6) 35%,
 		rgba(237, 208, 150, 0.5) 100%
 	);
+	background-color: #fff;
 }
 
 .fret-board {

@@ -1,8 +1,26 @@
-.fret_board_container {
+.fret-board-outer-wrapper {
+	height: 100%;
+	width: 1495px;
+	padding: 0px 40px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.fret-board-inner-wrapper {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.fret-board-container {
 	position: relative;
 
 	width: auto;
-	margin-bottom: 40px;;
+	margin-bottom: 40px;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -20,7 +38,7 @@
 	);
 }
 
-.fret_board {
+.fret-board {
 	overflow: hidden;
 	height: 240px;
 	width: auto;
@@ -51,6 +69,10 @@
 	background-color: transparent;
 	cursor: pointer;
 	position: relative;
+}
+
+.fret-board-container-hidden .item > p {
+	opacity: 0 !important;
 }
 
 .item-row-last {
@@ -185,14 +207,12 @@
 }
 
 .dots-6 {
-
 	left: calc(
 		112px + 106px + 100px + 94px + 89px + 84px + 79px + 75px + 71px + 67px +
 			63px + 59px + 56px + 53px
 	);
 	width: 50px;
 }
-
 
 .dots-7 {
 	left: calc(
@@ -218,8 +238,7 @@
 	width: 35px;
 }
 
-
-.fret_board_open {
+.fret-board-open-notes {
 	position: relative;
 	height: 240px;
 	width: 50px;
@@ -266,6 +285,12 @@ body > h3 {
 	grid-template-columns: 112px 106px 100px 94px 89px 84px 79px 75px 71px 67px 63px 59px 56px 53px 50px 47px 45px 42px 40px 37px 35px 33px;
 	margin-top: auto;
 	margin-bottom: 8px;
+
+	transition: all 0.3s ease-in;
+}
+
+.fret-numbers-hidden {
+	opacity: 0;
 }
 
 .fret-number {

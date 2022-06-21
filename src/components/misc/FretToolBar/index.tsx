@@ -1,11 +1,15 @@
 import React from 'react';
 import Marker from '../Marker';
+import Button from '../Button';
 import './index.scss';
 
 const FretToolbar = ({
 	onClickMarker = (isBasic: boolean) => {},
+	onToggleNotes = () => {},
+	onToggleFrets = () => {},
 	activeMarker = 1
 }) => {
+
 	return (
 		<div className="fret-tool-bar">
 			<div className="markers">
@@ -16,6 +20,8 @@ const FretToolbar = ({
 					isBasic={false}
 				/>
 			</div>
+			<Button name="Toggle Note's" onClick={onToggleNotes}/>
+			<Button name="Toggle Fret Number's" onClick={onToggleFrets}/>
 		</div>
 	);
 };

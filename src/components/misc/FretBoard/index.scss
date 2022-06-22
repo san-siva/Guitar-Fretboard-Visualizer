@@ -1,26 +1,19 @@
 .fret-board-outer-wrapper {
-	height: 100%;
-	width: 1495px;
-	padding: 0px 40px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-
-	background-image: radial-gradient(#444cf7 0.5px, #fff 0.5px);
-	background-size: 10px 10px;
-}
-
-.fret-board-inner-wrapper {
 	margin-top: auto;
+	margin-bottom: auto;
+	width: calc(100% - 40px);
+	padding-left: 40px;
 }
 
 .fret-board-inner-wrapper {
 	width: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
+	overflow-y: auto;
+	margin-bottom: 18px;
+}
+
+
+.fret-board-wrapper {
+	width: 1495px;
 }
 
 .fret-board-container {
@@ -254,28 +247,6 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-}
-
-.fret_revealer {
-	margin-bottom: auto;
-	cursor: pointer;
-	padding: 8px 12px;
-
-	font-weight: 500;
-	font-size: 12px;
-	color: #0c0f14;
-	background-color: #e4e4e8;
-
-	transition: all 0.3s ease-in-out;
-	margin-bottom: 5px;
-}
-
-.fret_revealer:hover {
-	background-color: #cdcdd0;
-}
-
-.fret_revealer_last {
-	margin-bottom: auto;
 }
 
 body > h3 {

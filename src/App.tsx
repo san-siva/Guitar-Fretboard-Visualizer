@@ -6,6 +6,12 @@ function App() {
 	return (
 		<div className="App">
 			<Home />
+			<div className="footer">
+				<a href="https://www.linkedin.com/in/santhosh-siva-385ab018b/">
+					linkedin.com
+				</a>
+				<a href="https://github.com/grace-luminous/guitar-tab-maker-react">github.com</a>
+			</div>
 		</div>
 	);
 }

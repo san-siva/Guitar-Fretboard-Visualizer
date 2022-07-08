@@ -9,6 +9,8 @@
 	width: 100%;
 	overflow-y: auto;
 	margin-bottom: 18px;
+	display: flex;
+	flex-direction: row;
 }
 
 .fret-board-wrapper {
@@ -19,15 +21,12 @@
 	position: relative;
 
 	width: auto;
-	margin-bottom: 40px;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
 
 	box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.18);
-	border-top-right-radius: 10px;
-	border-bottom-right-radius: 10px;
 
 	background: linear-gradient(
 		90deg,
@@ -281,6 +280,44 @@ body > h3 {
 
 	font-weight: 400;
 	font-size: 12px;
+	color: #0c0f14;
+}
+
+.fret-board-selector,
+.new-fret-toggle {
+	width: auto;
+	margin-top: 22.5px;
+	padding: 0px 15px;
+	transition: all 0.3s ease-in;
+
+	font-weight: 400;
+	font-size: 48px;
+	color: #e4e4e8;
+
+	background-color: #cdcdd00d;
+	backdrop-filter: blur(4px);
+	border: 0.1px solid #71797e24;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+
+	cursor: pointer;
+	opacity: 0.5;
+
+	transition: all 0.3s linear;
+}
+
+.fret-board-selector {
+	background-color: #e4e4e8;
+	opacity: 1;
+}
+
+.fret-board-selector-active,
+.fret-board-selector:hover {
+	background-color: #febb31;
+}
+
+.new-fret-toggle:hover {
+	opacity: 1;
 	color: #0c0f14;
 }
 

@@ -427,6 +427,7 @@ export const closedNotes = [
 ];
 
 export const defaultFretMap = {
+	id: 'default',
 	'e-0': 0,
 	'a-0': 0,
 	'd-0': 0,
@@ -566,3 +567,6 @@ export const defaultFretMap = {
 	'c#-61': 0,
 	'd-61': 0
 };
+
+export const randomStringGenerator = () =>
+	(Math.random() + 1).toString(36).substring(7);

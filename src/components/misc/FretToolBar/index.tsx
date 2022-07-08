@@ -1,5 +1,4 @@
 import React from 'react';
-import { createPortal } from 'react-dom';
 import Marker from '../Marker';
 import Button from '../Button';
 import './index.scss';
@@ -12,7 +11,7 @@ const FretToolbar = ({
 	activeMarker = 1,
 	activeScale = ''
 }) => {
-	return createPortal(
+	return (
 		<div className="fret-tool-bar">
 			<div className="markers">
 				<Marker onClick={onClickMarker} isActive={activeMarker === 1} isBasic />
@@ -20,8 +19,7 @@ const FretToolbar = ({
 					onClick={onClickMarker}
 					isActive={activeMarker === 2}
 					isBasic={false}
-				/>
-			</div>
+				/> </div>
 			<Button name="Toggle Note's" onClick={onToggleNotes} />
 			<Button name="Toggle Fret Number's" onClick={onToggleFrets} />
 			<h3>Toggle Scales</h3>
@@ -57,8 +55,7 @@ const FretToolbar = ({
 					onClick={onToggleScales}
 				/>
 			</div>
-		</div>,
-		document.getElementById('tool')!
+		</div>
 	);
 };
 

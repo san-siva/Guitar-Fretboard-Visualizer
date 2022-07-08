@@ -1,22 +1,10 @@
-#tool {
-	position: fixed;
-	left: 0;
-	bottom: 0;
-	width: 100%;
-	background-color: #fff;
-	z-index: 99;
-
-	box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.18);
-}
-
 .fret-tool-bar {
-	height: calc(100% - 40px);
+	margin-top: 80px;
 	width: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: flex-start;
-	padding: 20px 40px;
 
 	position: sticky;
 	top: 0;

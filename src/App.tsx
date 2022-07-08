@@ -5,6 +5,7 @@ import './App.scss';
 function App() {
 	return (
 		<div className="App">
+			<Home />
 			<div className="footer">
 				<a
 					href="https://www.linkedin.com/in/santhosh-siva-385ab018b/"
@@ -21,7 +22,6 @@ function App() {
 					github.com
 				</a>
 			</div>
-			<Home />
 		</div>
 	);
 }

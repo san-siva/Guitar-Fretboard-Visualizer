@@ -33,7 +33,6 @@ const FretBoard = () => {
 			};
 			updateActiveScale('');
 			_.forEach(scales, (value, key) => {
-				console.log(value, value === newFretMap);
 				if (JSON.stringify(value) === JSON.stringify(newFretMap)) {
 					updateActiveScale(key);
 				}
@@ -75,6 +74,8 @@ const FretBoard = () => {
 			updateFretMap(scales?.[scale]);
 		}
 	};
+
+	console.log(fretMap);
 
 	return (
 		<div className="fret-board-outer-wrapper">

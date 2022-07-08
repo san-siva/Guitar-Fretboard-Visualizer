@@ -26,12 +26,38 @@ const FretToolbar = ({
 			<Button name="Toggle Fret Number's" onClick={onToggleFrets} />
 			<Button name="Take Screen Shot" onClick={onClickScreenShot} />
 			<h3>Toggle Scales</h3>
-			<Button
-				isActive={activeScale === 'E'}
-				name="E"
-				id="E"
-				onClick={onToggleScales}
-			/>
+			<div className="fret-scales">
+				<Button
+					isActive={activeScale === 'C'}
+					name="C"
+					id="C"
+					onClick={onToggleScales}
+				/>
+				<Button
+					isActive={activeScale === 'A'}
+					name="A"
+					id="A"
+					onClick={onToggleScales}
+				/>
+				<Button
+					isActive={activeScale === 'G'}
+					name="G"
+					id="G"
+					onClick={onToggleScales}
+				/>
+				<Button
+					isActive={activeScale === 'E'}
+					name="E"
+					id="E"
+					onClick={onToggleScales}
+				/>
+				<Button
+					isActive={activeScale === 'D'}
+					name="D"
+					id="D"
+					onClick={onToggleScales}
+				/>
+			</div>
 		</div>
 	);
 };

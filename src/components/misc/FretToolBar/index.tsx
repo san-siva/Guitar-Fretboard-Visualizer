@@ -7,10 +7,11 @@ const FretToolbar = ({
 	onClickMarker = (isBasic: boolean) => {},
 	onToggleNotes = () => {},
 	onToggleFrets = () => {},
+	onToggleScales = (scale: string) => {},
 	onClickScreenShot = () => {},
-	activeMarker = 1
+	activeMarker = 1,
+	activeScale = ''
 }) => {
-
 	return (
 		<div className="fret-tool-bar">
 			<div className="markers">
@@ -21,9 +22,16 @@ const FretToolbar = ({
 					isBasic={false}
 				/>
 			</div>
-			<Button name="Toggle Note's" onClick={onToggleNotes}/>
-			<Button name="Toggle Fret Number's" onClick={onToggleFrets}/>
-			<Button name="Take Screen Shot" onClick={onClickScreenShot}/>
+			<Button name="Toggle Note's" onClick={onToggleNotes} />
+			<Button name="Toggle Fret Number's" onClick={onToggleFrets} />
+			<Button name="Take Screen Shot" onClick={onClickScreenShot} />
+			<h3>Toggle Scales</h3>
+			<Button
+				isActive={activeScale === 'E'}
+				name="E"
+				id="E"
+				onClick={onToggleScales}
+			/>
 		</div>
 	);
 };

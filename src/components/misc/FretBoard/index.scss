@@ -1,7 +1,8 @@
 .fret-board-outer-wrapper {
-	margin-top: auto;
 	margin-bottom: auto;
 	width: calc(100% - 40px);
+	max-width: calc(100% - 40px);
+	overflow: auto;
 	padding-left: 40px;
 }
 
@@ -35,6 +36,10 @@
 		rgba(237, 208, 150, 0.5) 100%
 	);
 	background-color: #fff;
+}
+
+.fret-board-container-active {
+	//	box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.18);
 }
 
 .fret-board {
@@ -291,24 +296,41 @@ body > h3 {
 	transition: all 0.3s ease-in;
 
 	font-weight: 400;
-	font-size: 48px;
-	color: #e4e4e8;
+	font-size: 28px;
 
-	background-color: #cdcdd00d;
+	background-color: #edd09638;
 	backdrop-filter: blur(4px);
-	border: 0.1px solid #71797e24;
-	border-top-left-radius: 10px;
-	border-bottom-left-radius: 10px;
+
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
 
 	cursor: pointer;
-	opacity: 0.5;
-
 	transition: all 0.3s linear;
+
+	padding: 0px;
+	width: 0px;
+	color: transparent;
 }
 
 .fret-board-selector {
-	background-color: #e4e4e8;
-	opacity: 1;
+	background-color: rgba(237, 208, 150, 1);
+	border-radius: 0px;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+
+.fret-board-inner-wrapper-active > .new-fret-toggle,
+.fret-board-inner-wrapper:hover > .new-fret-toggle,
+.new-fret-toggle:hover {
+	padding: 0px 15px;
+	width: auto;
+	color: #0c0f14;
+}
+
+.fret-board-selector {
+	padding: 0px 15px;
+	width: auto;
+	color: #0c0f14;
 }
 
 .fret-board-selector-active,
@@ -317,8 +339,11 @@ body > h3 {
 }
 
 .new-fret-toggle:hover {
-	opacity: 1;
-	color: #0c0f14;
+	// background-color: #a7ed9638;
+}
+
+.new-fret-toggle-delete:hover {
+	// background-color: #ed969638;
 }
 
 .dot {

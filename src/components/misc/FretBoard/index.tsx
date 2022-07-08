@@ -1,8 +1,7 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import _ from 'lodash';
 
 import FretToolbar from '../FretToolBar';
-import { useScreenshot, createFileName } from 'use-react-screenshot';
 
 import {
 	randomStringGenerator,
@@ -20,8 +19,6 @@ type FRET_MAP_OBJ = {
 type FRET_MAP = Array<FRET_MAP_OBJ>;
 
 const FretBoard = () => {
-	const containerRef = useRef(null);
-	const [image, takeScreenshot] = useScreenshot();
 	const [activeScale, updateActiveScale] = useState('');
 
 	const [activeFret, updateActiveFret] = useState('default');
@@ -43,15 +40,17 @@ const FretBoard = () => {
 
 	const handleClickNote = (e: any) => {
 		const id = e.currentTarget.getAttribute('data-id') as string;
+		const fretId = e.currentTarget.getAttribute('data-fret-id') as string;
+		updateActiveFret(fretId);
 		updateFretmaps(prevState => {
-			const prevFretMap = fretMaps.find(el => el.id === activeFret)!;
+			const prevFretMap = fretMaps.find(el => el.id === fretId)!;
 			const newFretMap = {
 				...prevFretMap,
 				[id]: prevFretMap[id] === selectedMarker ? 0 : selectedMarker
 			};
 			updateActiveScale('');
 			resetScale(newFretMap);
-			return prevState.map(el => (el.id === activeFret ? newFretMap : el));
+			return prevState.map(el => (el.id === fretId ? newFretMap : el));
 		});
 	};
 
@@ -65,16 +64,6 @@ const FretBoard = () => {
 
 	const handleToggleNotes = () => {
 		toggleFretNotes(prevVal => !prevVal);
-	};
-
-	const handleScreenShot = () => {
-		if (containerRef?.current) {
-			takeScreenshot(containerRef?.current);
-			const a = document.createElement('a');
-			a.href = image;
-			a.download = createFileName('png', 'guitar-tab');
-			a.click();
-		}
 	};
 
 	const handleToggleScales = (scale: string) => {
@@ -128,17 +117,12 @@ const FretBoard = () => {
 	return (
 		<div className="fret-board-outer-wrapper">
 			{fretMaps.map((fret, fretIndex, allFretBoards) => (
-				<div key={fret.id} className="fret-board-inner-wrapper">
-					<button
-						data-id={fret.id}
-						onClick={handleToggleFretBoardActive}
-						className={`fret-board-selector ${
-							fret.id === activeFret ? 'fret-board-selector-active' : ''
-						}`}
-					>
-						<div />
-					</button>
-					<div className="fret-board-wrapper" ref={containerRef}>
+				<div
+					key={fret.id}
+					className={`fret-board-inner-wrapper
+					 ${fret.id === activeFret ? 'fret-board-inner-wrapper-active' : ''}`}
+				>
+					<div className="fret-board-wrapper">
 						<div
 							className={`${
 								isFretNumbersEnabled ? '' : 'fret-numbers-hidden'
@@ -185,6 +169,7 @@ const FretBoard = () => {
 												: ''
 										} item ${el.isLastRow ? 'item-row-last' : ''}`}
 										data-id={el.id}
+										data-fret-id={fret.id}
 									>
 										<p>{el.title}</p>
 									</div>
@@ -209,6 +194,7 @@ const FretBoard = () => {
 												: ''
 										} item ${el.isLastRow ? 'item-row-last' : ''}`}
 										data-id={el.id}
+										data-fret-id={fret.id}
 									>
 										<p>{el.title}</p>
 									</div>
@@ -251,7 +237,9 @@ const FretBoard = () => {
 						</div>
 					</div>
 					<button
-						className="new-fret-toggle"
+						className={`new-fret-toggle ${
+							allFretBoards[fretIndex + 1] ? 'new-fret-toggle-delete' : ''
+						}`}
 						data-id={fret.id}
 						data-index={fretIndex}
 						onClick={handleToggleFretBoard}
@@ -267,7 +255,6 @@ const FretBoard = () => {
 				onToggleFrets={handleToggleFrets}
 				onToggleNotes={handleToggleNotes}
 				onToggleScales={handleToggleScales}
-				onClickScreenShot={handleScreenShot}
 			/>
 		</div>
 	);

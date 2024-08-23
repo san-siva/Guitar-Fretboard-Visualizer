@@ -1,6 +1,6 @@
-Guitar Tab Maker: A Visual Guide for Learning Guitar 🎸
+Guitar Fretboard Visualizer: A Visual Guide for Learning Guitar 🎸
 
-You can visit the live perview here https://san-siva.github.io/guitar-tab-maker-react/
+You can visit the live perview here https://san-siva.github.io/Guitar-Fretboard-Visualizer/
 
 
 
